@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Pokemon Tracker</title>
+  <link rel="icon" href="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1280px-Pok%C3%A9_Ball_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20161023215848">
+  <link rel="stylesheet" href="pokemonapi.css">
+</head>
+
+<body>
+
+<div class="side-icon left" aria-hidden="true"></div>
+<div class="side-icon right" aria-hidden="true"></div>
+
+<div class="box">
+  <div class="header-top">
+  <div class="row-before-header">API homework . pokedex lab</div>
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      <span class="status-text">POKEAPI</span>
+    </div>
+  </div>
+
+  <h1>
+    Pokemon Card Explorer
+  </h1>
+  <pre class="grey-text">Searth the PokeAPI, inspect the response, and turn structured dara into a
+trading-card-style interface.
+  </pre>
+
+</div>
+
+
+<div class="box">
+
+  <div class="search-header">
+    <div>
+      <div class="row-before-header">LIVE SEARCH</div>
+      <h4>Find a Pokemon</h4>
+    </div>
+    <div class="endpoint-info">GET /api/v2/pokemon/{name}</div>
+  </div>
+
+  <div class="search-inputs">
+    <input type="text" id="search-input" placeholder="Try mew, ditto, pikachu..." value="mew">
+    <button id="search-button">Search👈</button>
+  </div>
+
+  <div class="quick-search">
+      Quick search:
+      <span id="quick-search-list"></span>
+      <button id="random-button">🎲 Random</button>
+    </div>
+
+    <div id="status-message" class="status-message"></div>
+
+</div>
+
+<div id="card-container"></div>
+
+<script src="pokemonapi.js"></script>
+
+
+</body>
+
+</html>

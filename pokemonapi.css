@@ -1,0 +1,754 @@
+/* ============================================
+   1. ROOT VARIABLES (default theme)
+   ============================================ */
+:root{
+    --card-width: 800px;   /* one source of truth: the .box column width */
+    --bg-color: #060b19;
+    --box-bg: #111827;
+    --box-border: #4c525a;
+    --text-main: #f9fafb;
+    --text-muted: #9ca3af;
+    --text-before-header: #6dddff;
+    --badge-bg: #0f172a;
+    --badge-border: #1e293b;
+    --accent-green: #10b981;
+    --accent: #6dddff;
+    --accent-glow: rgba(109, 221, 255, 0.4);
+    --page-glow: #172554;
+    --icon-url: none;
+    --light-pattern: radial-gradient(
+        ellipse 120% 60% at 50% 0%,
+        rgba(109, 221, 255, 0.2) 0%,
+        transparent 60%
+    );
+}
+
+/* ============================================
+   2. TYPE-BASED THEMES — with unique light patterns
+   ============================================ */
+
+body.theme-normal {
+    --bg-color: #1a1d23;
+    --box-bg: #23272f;
+    --box-border: #4c525a;
+    --accent: #d1d5db;
+    --accent-glow: rgba(209, 213, 219, 0.35);
+    --page-glow: #4c525a;
+    --text-before-header: #d1d5db;
+    --light-pattern: radial-gradient(
+        ellipse 120% 60% at 50% 0%,
+        rgba(209, 213, 219, 0.25) 0%,
+        transparent 60%
+    );
+}
+
+body.theme-fire {
+    --bg-color: #1a0806;
+    --box-bg: #2b100c;
+    --box-border: #b91c1c;
+    --accent: #fb923c;
+    --accent-glow: rgba(251, 146, 60, 0.5);
+    --page-glow: #dc2626;
+    --text-before-header: #fb923c;
+    --icon-url: url('fire.jpg');
+    --light-pattern:
+        radial-gradient(ellipse 70% 45% at 30% 110%, rgba(251, 146, 60, 0.55) 0%, transparent 70%),
+        radial-gradient(ellipse 70% 45% at 70% 110%, rgba(220, 38, 38, 0.5) 0%, transparent 70%),
+        radial-gradient(circle at 50% 100%, rgba(255, 200, 100, 0.35) 0%, transparent 55%);
+}
+
+body.theme-water {
+    --bg-color: #05121f;
+    --box-bg: #0a2138;
+    --box-border: #2563eb;
+    --accent: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.5);
+    --page-glow: #2563eb;
+    --text-before-header: #38bdf8;
+    --icon-url: url('water.jpg');
+    --light-pattern:
+        repeating-linear-gradient(
+            0deg,
+            rgba(56, 189, 248, 0.10) 0px,
+            rgba(56, 189, 248, 0.10) 2px,
+            transparent 2px,
+            transparent 16px
+        ),
+        radial-gradient(ellipse 100% 50% at 50% 0%, rgba(37, 99, 235, 0.5) 0%, transparent 65%);
+}
+
+body.theme-grass {
+    --bg-color: #061508;
+    --box-bg: #0c2812;
+    --box-border: #16a34a;
+    --accent: #4ade80;
+    --accent-glow: rgba(74, 222, 128, 0.5);
+    --page-glow: #22c55e;
+    --text-before-header: #4ade80;
+    --icon-url: url('grass.png');
+    --light-pattern:
+        linear-gradient(
+            135deg,
+            rgba(74, 222, 128, 0.4) 0%,
+            rgba(74, 222, 128, 0.1) 25%,
+            transparent 55%
+        ),
+        radial-gradient(circle at 10% 10%, rgba(163, 230, 53, 0.3) 0%, transparent 40%);
+}
+
+body.theme-electric {
+    --bg-color: #1a1405;
+    --box-bg: #2b2208;
+    --box-border: #eab308;
+    --accent: #fde047;
+    --accent-glow: rgba(253, 224, 71, 0.5);
+    --page-glow: #facc15;
+    --text-before-header: #fde047;
+    --icon-url: url('electric.jpg');
+    --light-pattern:
+        conic-gradient(
+            from 180deg at 50% 0%,
+            rgba(253, 224, 71, 0.5) 0deg,
+            transparent 60deg,
+            transparent 300deg,
+            rgba(253, 224, 71, 0.5) 360deg
+        ),
+        radial-gradient(circle at 50% 0%, rgba(250, 204, 21, 0.45) 0%, transparent 50%);
+}
+
+body.theme-psychic {
+    --bg-color: #1f0616;
+    --box-bg: #340b26;
+    --box-border: #db2777;
+    --accent: #f472b6;
+    --accent-glow: rgba(244, 114, 182, 0.5);
+    --page-glow: #ec4899;
+    --text-before-header: #f472b6;
+    --icon-url: url('psychic.png');
+    --light-pattern:
+        conic-gradient(
+            from 0deg at 50% 50%,
+            rgba(244, 114, 182, 0.35) 0deg,
+            transparent 90deg,
+            rgba(236, 72, 153, 0.35) 180deg,
+            transparent 270deg,
+            rgba(244, 114, 182, 0.35) 360deg
+        );
+}
+
+body.theme-ice {
+    --bg-color: #061518;
+    --box-bg: #0a2429;
+    --box-border: #06b6d4;
+    --accent: #67e8f9;
+    --accent-glow: rgba(103, 232, 249, 0.5);
+    --page-glow: #22d3ee;
+    --text-before-header: #67e8f9;
+    --icon-url: url('ice.png');
+    --light-pattern:
+        radial-gradient(circle at 20% 30%, rgba(103, 232, 249, 0.35) 0%, transparent 25%),
+        radial-gradient(circle at 80% 20%, rgba(34, 211, 238, 0.3) 0%, transparent 25%),
+        radial-gradient(circle at 60% 80%, rgba(103, 232, 249, 0.25) 0%, transparent 30%),
+        radial-gradient(circle at 30% 90%, rgba(34, 211, 238, 0.25) 0%, transparent 25%);
+}
+
+body.theme-dragon {
+    --bg-color: #0a0620;
+    --box-bg: #151040;
+    --box-border: #4f46e5;
+    --accent: #818cf8;
+    --accent-glow: rgba(129, 140, 248, 0.5);
+    --page-glow: #6366f1;
+    --text-before-header: #818cf8;
+    --icon-url: url('dragon.jpg');
+    --light-pattern:
+        linear-gradient(
+            180deg,
+            rgba(129, 140, 248, 0.4) 0%,
+            rgba(99, 102, 241, 0.15) 30%,
+            transparent 60%
+        ),
+        radial-gradient(ellipse 40% 60% at 50% 0%, rgba(129, 140, 248, 0.5) 0%, transparent 70%);
+}
+
+body.theme-dark {
+    --bg-color: #0a0a0d;
+    --box-bg: #1c1c22;
+    --box-border: #52525b;
+    --accent: #a1a1aa;
+    --accent-glow: rgba(161, 161, 170, 0.4);
+    --page-glow: #52525b;
+    --text-before-header: #a1a1aa;
+    --icon-url: url('dark.png');
+    --light-pattern:
+        radial-gradient(circle at 0% 100%, rgba(161, 161, 170, 0.3) 0%, transparent 40%),
+        linear-gradient(45deg, transparent 60%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+body.theme-fairy {
+    --bg-color: #1f0a16;
+    --box-bg: #340f24;
+    --box-border: #ec4899;
+    --accent: #f9a8d4;
+    --accent-glow: rgba(249, 168, 212, 0.5);
+    --page-glow: #f472b6;
+    --text-before-header: #f9a8d4;
+    --icon-url: url('fairy.png');
+    --light-pattern:
+        radial-gradient(circle at 15% 15%, rgba(249, 168, 212, 0.5) 0%, transparent 8%),
+        radial-gradient(circle at 45% 8%, rgba(249, 168, 212, 0.4) 0%, transparent 6%),
+        radial-gradient(circle at 75% 20%, rgba(249, 168, 212, 0.5) 0%, transparent 8%),
+        radial-gradient(circle at 90% 10%, rgba(249, 168, 212, 0.35) 0%, transparent 6%);
+}
+
+body.theme-fighting {
+    --bg-color: #1a0505;
+    --box-bg: #2b0a0a;
+    --box-border: #dc2626;
+    --accent: #f87171;
+    --accent-glow: rgba(248, 113, 113, 0.5);
+    --page-glow: #ef4444;
+    --text-before-header: #f87171;
+    --icon-url: url('fighting.png');
+    --light-pattern:
+        radial-gradient(circle at 0% 0%, rgba(248, 113, 113, 0.5) 0%, transparent 35%),
+        linear-gradient(135deg, rgba(239, 68, 68, 0.3) 0%, transparent 50%);
+}
+
+body.theme-poison {
+    --bg-color: #150620;
+    --box-bg: #240b38;
+    --box-border: #9333ea;
+    --accent: #c084fc;
+    --accent-glow: rgba(192, 132, 252, 0.5);
+    --page-glow: #a855f7;
+    --text-before-header: #c084fc;
+    --icon-url: url('poison.png');
+    --light-pattern:
+        radial-gradient(ellipse 15% 40% at 30% 0%, rgba(192, 132, 252, 0.5) 0%, transparent 80%),
+        radial-gradient(ellipse 15% 40% at 70% 0%, rgba(168, 85, 247, 0.45) 0%, transparent 80%),
+        linear-gradient(180deg, rgba(147, 51, 234, 0.3) 0%, transparent 40%);
+}
+
+body.theme-ground {
+    --bg-color: #1a1205;
+    --box-bg: #2b1e08;
+    --box-border: #d97706;
+    --accent: #fbbf24;
+    --accent-glow: rgba(251, 191, 36, 0.5);
+    --page-glow: #f59e0b;
+    --text-before-header: #fbbf24;
+    --icon-url: url('ground.png');
+    --light-pattern:
+        radial-gradient(ellipse 100% 50% at 50% 110%, rgba(251, 191, 36, 0.5) 0%, transparent 70%),
+        linear-gradient(0deg, rgba(217, 119, 6, 0.3) 0%, transparent 50%);
+}
+
+body.theme-rock {
+    --bg-color: #1a1408;
+    --box-bg: #2b220c;
+    --box-border: #a16207;
+    --accent: #ca8a04;
+    --accent-glow: rgba(202, 138, 4, 0.5);
+    --page-glow: #a16207;
+    --text-before-header: #ca8a04;
+    --icon-url: url('rock.png');
+    --light-pattern:
+        linear-gradient(
+            90deg,
+            rgba(202, 138, 4, 0.45) 0%,
+            transparent 55%
+        );
+}
+
+body.theme-bug {
+    --bg-color: #0f1805;
+    --box-bg: #1a2b0a;
+    --box-border: #65a30d;
+    --accent: #a3e635;
+    --accent-glow: rgba(163, 230, 53, 0.5);
+    --page-glow: #84cc16;
+    --text-before-header: #a3e635;
+    --icon-url: url('bug.png');
+    --light-pattern:
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(163, 230, 53, 0.4) 0%, transparent 60%);
+}
+
+body.theme-ghost {
+    --bg-color: #0d0818;
+    --box-bg: #1a1030;
+    --box-border: #7c3aed;
+    --accent: #a78bfa;
+    --accent-glow: rgba(167, 139, 250, 0.5);
+    --page-glow: #8b5cf6;
+    --text-before-header: #a78bfa;
+    --icon-url: url('ghost.png');
+    --light-pattern:
+        radial-gradient(ellipse 70% 60% at 50% 70%, rgba(167, 139, 250, 0.4) 0%, transparent 70%);
+}
+
+body.theme-steel {
+    --bg-color: #0f1216;
+    --box-bg: #1c2229;
+    --box-border: #64748b;
+    --accent: #cbd5e1;
+    --accent-glow: rgba(203, 213, 225, 0.4);
+    --page-glow: #64748b;
+    --text-before-header: #cbd5e1;
+    --icon-url: url('steel.png');
+    --light-pattern:
+        linear-gradient(
+            135deg,
+            rgba(203, 213, 225, 0.4) 0%,
+            transparent 40%
+        );
+}
+
+body.theme-flying {
+    --bg-color: #0d1220;
+    --box-bg: #182138;
+    --box-border: #6366f1;
+    --accent: #a5b4fc;
+    --accent-glow: rgba(165, 180, 252, 0.5);
+    --page-glow: #818cf8;
+    --text-before-header: #a5b4fc;
+    --icon-url: url('flying.png');
+    --light-pattern:
+        linear-gradient(
+            180deg,
+            rgba(165, 180, 252, 0.4) 0%,
+            transparent 60%
+        );
+}
+
+/* ============================================
+   3. GLOBAL RESET
+   ============================================ */
+* {
+    box-sizing: border-box;
+}
+
+/* ============================================
+   4. BODY
+   ============================================ */
+body {
+    background-color: var(--bg-color);
+    background-image: var(--light-pattern);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin-top: 20px;
+    min-height: 100vh;
+    transition: background-color 0.5s ease;
+}
+
+/* Types that own an image artwork get a plain BLACK page behind it
+   (the colored --light-pattern would fight with the photo on the sides) */
+body.has-side-icons {
+    background-color: #000000;
+    background-image: none;
+}
+
+/* ============================================
+   5. BOX
+   ============================================ */
+.box {
+    margin-top: 10px;
+    background-color: var(--box-bg);
+    border: 1px solid var(--box-border);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    width: var(--card-width);
+    padding: 1.15%;
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+/* ============================================
+   6. HEADER ELEMENTS
+   ============================================ */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.row-before-header {
+    color: var(--text-before-header);
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: color 0.5s ease;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent-green);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+.status-text {
+    color: #a4eaff;
+    font-size: smaller;
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    background-color: var(--badge-bg);
+    border: 1px solid var(--badge-border);
+    padding: 3px 7px;
+    border-radius: 9999px;
+    gap: 6px;
+}
+
+/* ============================================
+   7. TEXT
+   ============================================ */
+.grey-text {
+    color: var(--text-muted);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: var(--text-main);
+    margin-top: 0;
+    padding: 2px;
+    margin-bottom: 0.25rem;
+}
+
+h4 {
+    color: var(--text-main);
+    margin-top: 0;
+    padding: 2px;
+    margin-bottom: 0.25rem;
+}
+
+/* ============================================
+   8. SEARCH SECTION
+   ============================================ */
+.search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+}
+
+.search-header h2 {
+    color: var(--text-main);
+    margin: 4px 0 0 0;
+    font-size: 1.5rem;
+}
+
+.endpoint-info {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-family: monospace;
+}
+
+.search-inputs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#search-input {
+    flex-grow: 1;
+    background-color: #0a0f1d;
+    border: 1px solid var(--box-border);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.5s ease, box-shadow 0.2s ease;
+}
+
+#search-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+#search-button {
+    background-color: var(--accent);
+    color: #060b19;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s, background-color 0.5s ease;
+}
+
+#search-button:hover {
+    opacity: 0.85;
+}
+
+.quick-search {
+    margin-top: 1rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.quick-search button {
+    background: transparent;
+    border: 1px solid var(--box-border);
+    color: var(--text-muted);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quick-search button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.status-message {
+    margin-top: 1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   9. POKEMON CARD
+   ============================================ */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--box-border);
+    padding-bottom: 1rem;
+    transition: border-color 0.5s ease;
+}
+
+.card-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.card-hero-left h1 {
+    font-size: 4rem;
+    line-height: 1;
+    margin: 0.5rem 0;
+}
+
+#pokemon-sprite {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px var(--accent-glow));
+    transition: filter 0.5s ease;
+}
+
+/* Type Badge */
+.type-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #f472b6;
+    color: #060b19;
+}
+
+.type-fire      { background-color: #f87171; }
+.type-grass     { background-color: #4ade80; }
+.type-electric  { background-color: #facc15; }
+.type-water     { background-color: #60a5fa; }
+.type-psychic   { background-color: #f472b6; }
+.type-ice       { background-color: #67e8f9; }
+.type-dragon    { background-color: #818cf8; }
+.type-dark      { background-color: #6b7280; color: #f9fafb; }
+.type-fairy     { background-color: #f9a8d4; }
+.type-normal    { background-color: #d1d5db; }
+.type-fighting  { background-color: #dc2626; color: #f9fafb; }
+.type-flying    { background-color: #a5b4fc; }
+.type-poison    { background-color: #a855f7; color: #f9fafb; }
+.type-ground    { background-color: #d97706; color: #f9fafb; }
+.type-rock      { background-color: #a16207; color: #f9fafb; }
+.type-bug       { background-color: #84cc16; }
+.type-ghost     { background-color: #6366f1; color: #f9fafb; }
+.type-steel     { background-color: #94a3b8; }
+
+/* Height / Weight / Abilities */
+.card-stats-row {
+    display: flex;
+    border-top: 1px solid var(--box-border);
+    border-bottom: 1px solid var(--box-border);
+    transition: border-color 0.5s ease;
+}
+
+.stat-box {
+    flex: 1;
+    padding: 1rem;
+    border-right: 1px solid var(--box-border);
+    transition: border-color 0.5s ease;
+}
+
+.stat-box:last-child {
+    border-right: none;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 0.25rem;
+    color: var(--text-main);
+}
+
+/* Base Stats */
+.stats-section {
+    padding-top: 1.5rem;
+}
+
+.stats-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.stats-header h2 {
+    margin: 4px 0 0 0;
+    font-size: 1.2rem;
+    color: var(--text-main);
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-main);
+}
+
+.stat-name {
+    width: 100px;
+    font-weight: bold;
+}
+
+.stat-bar-bg {
+    flex-grow: 1;
+    height: 8px;
+    background-color: #1f2937;
+    border-radius: 4px;
+    margin: 0 1rem;
+    overflow: hidden;
+}
+
+.stat-bar-fill {
+    height: 100%;
+    background-color: var(--accent);
+    border-radius: 4px;
+    box-shadow: 0 0 8px var(--accent-glow);
+    transition: width 0.4s ease, background-color 0.5s ease;
+}
+
+.stat-number {
+    width: 40px;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* ============================================
+   10. POKÉMON CARD — light pattern + readability overlay
+   ============================================ */
+#card-container .box {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--box-bg);
+    background-image:
+        linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.45) 100%),
+        var(--light-pattern);
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+}
+
+#card-container .box > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================
+   11. SIDE TYPE ICONS — fill the left/right edges of the window
+   ============================================ */
+.side-icon {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    /* Exactly the empty gutter between the window edge and the card column,
+       so the artwork reaches the left/right side of the window and stops
+       where the cards begin (it can never sit on top of a box). 100% is the
+       viewport width without the scrollbar gutter, which is the same box the
+       centred .box column is laid out in, so the two always line up. On a
+       narrow window the min-width keeps it visible and it simply slides
+       behind the opaque .box backgrounds. */
+    width: calc((100% - var(--card-width)) / 2);
+    min-width: 140px;
+    background-image: var(--icon-url);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    /* Behind everything: if a narrow window makes the panels wider than the
+       gutter, the opaque .box backgrounds simply cover the overlap */
+    z-index: -1;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+/* Only the types that define an image show the side artwork */
+body.has-side-icons .side-icon {
+    opacity: 0.9;
+}
+
+/* Soft fade towards the middle so the photo melts into the black page */
+.side-icon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0) 45%,
+        rgba(0, 0, 0, 0.6) 100%
+    );
+}
+
+.side-icon.left {
+    left: 0;
+}
+
+.side-icon.right {
+    right: 0;
+    transform: scaleX(-1);
+}
+
+/* ============================================
+   12. DISABLED SEARCH BUTTON
+   ============================================ */
+#search-button:disabled {
+    background-color: #4b5563;
+    color: #9ca3af;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#search-button:disabled:hover {
+    opacity: 0.7;
+}
