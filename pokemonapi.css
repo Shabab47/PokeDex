@@ -153,22 +153,23 @@ body.theme-ice {
 }
 
 body.theme-dragon {
-    --bg-color: #0a0620;
-    --box-bg: #151040;
-    --box-border: #4f46e5;
-    --accent: #818cf8;
-    --accent-glow: rgba(129, 140, 248, 0.5);
-    --page-glow: #6366f1;
-    --text-before-header: #818cf8;
+    --bg-color: #170305;
+    --box-bg: #2e0810;
+    --box-border: #9f1239;
+    --accent: #fb7185;
+    --accent-glow: rgba(251, 113, 133, 0.5);
+    --page-glow: #e11d48;
+    --text-before-header: #fb7185;
     --icon-url: url('dragon.jpg');
+    /* Same bottom-up "flame burst" composition as fire — two ember blooms
+       rising from the lower corners plus a warm glow at the base — but in a
+       deep crimson/wine red instead of indigo, with a hint of gold in the
+       base glow for a "red dragon breathing fire" feel rather than fire's
+       plain orange-red. */
     --light-pattern:
-        linear-gradient(
-            180deg,
-            rgba(129, 140, 248, 0.4) 0%,
-            rgba(99, 102, 241, 0.15) 30%,
-            transparent 60%
-        ),
-        radial-gradient(ellipse 40% 60% at 50% 0%, rgba(129, 140, 248, 0.5) 0%, transparent 70%);
+        radial-gradient(ellipse 70% 45% at 30% 110%, rgba(251, 113, 133, 0.55) 0%, transparent 70%),
+        radial-gradient(ellipse 70% 45% at 70% 110%, rgba(159, 18, 57, 0.55) 0%, transparent 70%),
+        radial-gradient(circle at 50% 100%, rgba(251, 191, 36, 0.25) 0%, transparent 55%);
 }
 
 body.theme-dark {
@@ -362,7 +363,7 @@ body.has-side-icons {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     width: var(--card-width);
-    padding: 1.15%;
+    padding: 1.75rem;
     transition: background-color 0.5s ease, border-color 0.5s ease;
 }
 
@@ -567,7 +568,7 @@ h4 {
 .type-water     { background-color: #60a5fa; }
 .type-psychic   { background-color: #f472b6; }
 .type-ice       { background-color: #67e8f9; }
-.type-dragon    { background-color: #818cf8; }
+.type-dragon    { background-color: #f43f5e; }
 .type-dark      { background-color: #6b7280; color: #f9fafb; }
 .type-fairy     { background-color: #f9a8d4; }
 .type-normal    { background-color: #d1d5db; }
